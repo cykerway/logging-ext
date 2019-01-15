@@ -4,13 +4,22 @@
 logging ext module;
 '''
 
-from logging import *
+import logging
+import types
 
-DEBUG   = DEBUG
-VERBOSE = INFO - 1
-INFO    = INFO
-WARN    = WARN
-ERROR   = ERROR
+##  ============================================================================
+##  logging levels;
+##  ============================================================================
+
+DEBUG   = logging.DEBUG
+VERBOSE = logging.INFO - 1
+INFO    = logging.INFO
+WARN    = logging.WARN
+ERROR   = logging.ERROR
+
+##  ============================================================================
+##  1-letter logging methods;
+##  ============================================================================
 
 def d(msg, *args, **kwargs):
 
@@ -18,7 +27,7 @@ def d(msg, *args, **kwargs):
     log a message at debug level;
     '''
 
-    return log(DEBUG, msg, *args, **kwargs)
+    return logging.log(DEBUG, msg, *args, **kwargs)
 
 def v(msg, *args, **kwargs):
 
@@ -26,7 +35,7 @@ def v(msg, *args, **kwargs):
     log a message at verbose level;
     '''
 
-    return log(VERBOSE, msg, *args, **kwargs)
+    return logging.log(VERBOSE, msg, *args, **kwargs)
 
 def i(msg, *args, **kwargs):
 
@@ -34,7 +43,7 @@ def i(msg, *args, **kwargs):
     log a message at info level;
     '''
 
-    return log(INFO, msg, *args, **kwargs)
+    return logging.log(INFO, msg, *args, **kwargs)
 
 def w(msg, *args, **kwargs):
 
@@ -42,7 +51,7 @@ def w(msg, *args, **kwargs):
     log a message at warn level;
     '''
 
-    return log(WARN, msg, *args, **kwargs)
+    return logging.log(WARN, msg, *args, **kwargs)
 
 def e(msg, *args, **kwargs):
 
@@ -50,16 +59,17 @@ def e(msg, *args, **kwargs):
     log a message at error level;
     '''
 
-    return log(ERROR, msg, *args, **kwargs)
+    return logging.log(ERROR, msg, *args, **kwargs)
+
+##  ============================================================================
+##  functions;
+##  ============================================================================
 
 def getLogger(name=None):
 
     '''
-    override `logging.getLogger`; add additional methods to logger;
+    return a logger instrumented with additional 1-letter logging methods;
     '''
-
-    import logging
-    import types
 
     logger = logging.getLogger(name=name)
 
