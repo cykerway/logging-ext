@@ -8,7 +8,7 @@ import logging
 import types
 
 ##  ============================================================================
-##  logging levels;
+##  custom logging levels;
 ##  ============================================================================
 
 DEBUG   = logging.DEBUG
@@ -16,6 +16,16 @@ VERBOSE = logging.INFO - 1
 INFO    = logging.INFO
 WARN    = logging.WARN
 ERROR   = logging.ERROR
+
+##  ============================================================================
+##  add custom logging levels with names;
+##  ============================================================================
+
+logging.addLevelName(DEBUG,   'DEBUG'  )
+logging.addLevelName(VERBOSE, 'VERBOSE')
+logging.addLevelName(INFO,    'INFO'   )
+logging.addLevelName(WARN,    'WARN'   )
+logging.addLevelName(ERROR,   'ERROR'  )
 
 ##  ============================================================================
 ##  1-letter logging methods;
