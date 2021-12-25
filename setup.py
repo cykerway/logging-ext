@@ -17,12 +17,12 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
     name='logging-ext',
-    version='1.0.1',
+    version='1.0.2',
     packages=find_packages(),
     url='https://github.com/cykerway/logging-ext',
     author='Cyker Way',
     author_email='cykerway@example.com',
-    description='logging ext;',
+    description='logging extension;',
     long_description=long_description,
     long_description_content_type='text/markdown',
     classifiers=[
@@ -36,7 +36,7 @@ setup(
         'Programming Language :: Python :: 3.9',
         'Topic :: Software Development',
     ],
-    keywords='logging ext',
+    keywords='logging,extension',
     package_data={
     },
     data_files=[
